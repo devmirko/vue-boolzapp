@@ -21,18 +21,19 @@
                     <div class="box_image">
                         <img src="img/michele.png" alt="questa è una immagine">
                     </div>
+                   
                     
                 </div>
                 <div class="right_user_profile">
                     <ul>
                         <li>
-                            <a href=""><i>font</i></a>
+                            <a href=""><i class="fa-solid fa-circle-notch"></i></a>
                         </li>
                         <li>
-                            <a href=""><i>font</i></a>
+                            <a href=""><i class="fa-solid fa-message"></i></a>
                         </li>
                         <li>
-                            <a href=""><i>font</i></a>
+                            <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
                         </li>
                     
                     </ul>
@@ -41,8 +42,22 @@
             
         
             <div class="left_container">
-                <section id="new_messagge"></section>
-                <section id="research_chat"></section>
+                <section id="new_messagge">
+                    <div class="box_image">
+                        <img src="img/michele.png" alt="questa è una immagine">
+                    </div>
+                    <div class="box_not">
+                        <span>ricevi notifiche di nuovi messaggi</span>
+                        <a href="">attiva notifiche destkop</a>
+                    </div>
+
+                </section>
+                <section id="research_chat">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                </section>
                 <section id="contact">
                     <div class="item" v-for="(item, i) in contacts">
                         <!-- contatti  -->
@@ -63,14 +78,47 @@
 
         </div>
         <div id="right_app">
-            <!-- colonna destra app -->
             <div id="right_header">
                 <!-- immagine del profilo del utente -->
+                <div class="left_chat_profile">
+                    <div class="box_image">
+                        <img src="img/michele.png" alt="questa è una immagine">
+                    </div>
+                </div>
+                <div class="right_chat_profile">
+                    <div class="box_name">
+                        <h3>nome</h3>
+                        <p>ultimo messaggio inviato</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-solid fa-circle-notch"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-message"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    
+                    </ul>
+                    
+
+                </div>
+            </div>
             <div class="right_container">
 
             </div>
             <div class="text_container">
-            <!-- contenitore barra messaggi -->
+                <div class="smile">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+                <div class="text">
+                    <input type="text">
+                </div>
+                <div class="vocal">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
             </div>
 
         </div>

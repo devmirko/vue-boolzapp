@@ -37,14 +37,13 @@ body{
 #right_app{
     width: 70%;
     height: 100%;
-    background-color: red ;
+    border-left: 1px solid black;
 
 }
 /* parte di sinistra nel user con immagine e nome */
 #left_header{
     width: 100%;
     height: 70px;
-    background-color: yellow;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +52,6 @@ body{
  .box_image{
    width: 50px;
    height: 50px;
-   background-color: red;
    margin-left: 10px;
 }
 
@@ -65,11 +63,18 @@ body{
 
 .right_user_profile ul {
    display: flex;
+   margin-right: 20px;
  }
 
 .right_user_profile ul li{
     list-style-type: none;
     margin-left: 20px;
+
+}
+
+.right_user_profile ul li a{
+    text-decoration: none;
+    color: #DBDBD3;
 }
 
 /*  sezione notifiche  */
@@ -77,13 +82,35 @@ body{
     width: 100%;
     height: 80px;
     background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+}
+
+#new_messagge .box_not{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
 }
 
 /* ricerca chat */
 #research_chat{
     width: 100%;
     height: 50px;
-    background-color: green;
+    display: flex;
+    padding: 5px;
+}
+
+#research_chat button{
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    
+}
+
+#research_chat input{
+    width: 85%;
+    height: 100%;
 }
 
 /* contatti */
@@ -93,17 +120,76 @@ body{
     align-items: center;
     min-height: 80px;
     /* debugger */
-    border: 1px solid black;
+    
 }
 
 
 
 
 /* parte di destra */
+/* testata parte destra */
+.left_chat_profile{
+ width: 10%;
+}
+
 #right_header{
     width: 100%;
     height: 70px;
-    background-color: yellow;
+
+    display: flex;
+    align-items: center;
 }
 
+.right_chat_profile{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right_chat_profile ul{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.right_chat_profile ul li{
+    list-style-type: none;
+    margin-left: 20px;
+   
+}
+
+.right_chat_profile ul li a{
+    text-decoration: none;
+    color: #DBDBD3;
+}
+ /* contenuto chat */
+ .right_container{
+     width: 100%;
+     height: calc(100vh - 221px);
+     background-image: url("img/sfondo-chat.webp");
+ }
+
+ /* text container */
+ .text_container{
+     width: 100%;
+     height: 70px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .smile, .vocal{
+     width: 10%;
+     text-align: center;
+     color: #DBDBD3;
+     font-size: 28px;
+ }
+
+ .text{
+     width: 80%;
+ }
+
+ .text input{
+     width: 100%;
+ }
 
