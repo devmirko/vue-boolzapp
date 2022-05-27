@@ -169,6 +169,32 @@ body{
      background-image: url("img/sfondo-chat.webp");
  }
 
+ /* classi messaggi */
+ .row{
+     
+     width: 80%;
+     margin: 0 auto;
+     min-height: 70px;
+     display: flex;
+
+ }
+
+ .item_messagge{
+     width: 300px;
+     height: 100%;
+     padding: 10px 0;
+     border-radius: 10px;
+     background-color: white;
+ }
+
+ .tosend{
+     background-color: #009688;
+ }
+
+ .right{
+     justify-content: end;
+ }
+
  /* text container */
  .text_container{
      width: 100%;
