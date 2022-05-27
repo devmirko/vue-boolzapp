@@ -27,3 +27,75 @@ body{
     display: flex;
 
 }
+
+#left_app{
+    width: 30%;
+    height: 100%;
+    
+}
+
+#right_app{
+    width: 70%;
+    height: 100%;
+    background-color: red ;
+
+}
+/* parte di sinistra nel user con immagine e nome */
+#left_header{
+    width: 100%;
+    height: 70px;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_user_profile .box_image{
+   width: 50px;
+   height: 50px;
+   background-color: red;
+   margin-left: 10px;
+}
+
+.left_user_profile .box_image img{
+    width: 100%;
+    height: 100%;
+}
+/* parte di destra del user con impostazioni */
+
+.right_user_profile ul {
+   display: flex;
+ }
+
+.right_user_profile ul li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+/*  sezione notifiche  */
+#new_messagge{
+    width: 100%;
+    height: 80px;
+    background-color: #8EDAFC;
+}
+
+/* ricerca chat */
+#research_chat{
+    width: 100%;
+    height: 50px;
+    background-color: green;
+}
+
+/* contatti */
+
+
+
+
+/* parte di destra */
+#right_header{
+    width: 100%;
+    height: 70px;
+    background-color: yellow;
+}
+
+
