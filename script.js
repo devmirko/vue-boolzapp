@@ -170,8 +170,22 @@ const myApp = new Vue({
                         status: 'received'
                     }
                 ],
+               
             }
-        ]
+        ],
+        //messaggio inviato dal' utente 
+        newMessage: {
+            date: new Date().toLocaleString(),
+            text: '',
+            status: 'sent',
+        },
+        //messaggio di risposta automatico
+        respMessage: {
+            date: new Date().toLocaleString(),
+            text: 'OK!!!',
+            status: 'received',
+        },
+        
         
     },
     methods : {
@@ -184,7 +198,20 @@ const myApp = new Vue({
                 this.contacts[index].visible = true;
             }
         },
-
-       
+       //funzione che controlla l'invio del messaggio del utente e la aggiunge al oggetto con la classe visible:true
+       sendMessagge(){
+        if (this.newMessage.text[0] !== "" && this.newMessage.text.length > 0) {
+            this.contacts.find((element) => {
+                if(element.visible === true) {
+                    element.messages.push(this.newMessage);
+                    this.newMessage = {date: new Date().toLocaleString(), text: '', status: 'sent'};
+                    setTimeout(() => element.messages.push(this.respMessage), 1000);
+                    this.responseMessage = {date: new Date().toLocaleString(), text: 'OK!!!', status: 'received'};
+                }
+            })
+           
+        }
+        
+       },
     }
 }) 

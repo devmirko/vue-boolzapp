@@ -112,9 +112,8 @@
             <div class="right_container">
                 <!-- colonna con contenuto messaggi dove a seconda della tipologia di messaggio
                 cambiano le classi justfy-content e background-color -->
-                <div class="row" v-for="contact, chatIndex in contacts" :key="chatIndex">
+                <div class="row" v-for="contact, chatIndex in contacts" :key="chatIndex" v-if="contact.visible === true" >
                     <div class="item_messagge"
-                    v-if="contact.visible === true" 
                     v-for="message, messageIndex in contact.messages" :key="messageIndex"
                     :class="message.status === 'sent' ? 'tosend' : 'received' ">
                         {{message.text}}
@@ -128,7 +127,7 @@
                     <i class="fa-solid fa-face-smile"></i>
                 </div>
                 <div class="text">
-                    <input type="text">
+                    <input type="text" placeholder="scrivi un messaggio" v-model="newMessage.text"  @keyup.enter="sendMessagge">
                 </div>
                 <div class="vocal">
                     <i class="fa-solid fa-microphone"></i>
