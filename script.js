@@ -7,6 +7,7 @@ const myApp = new Vue({
                 image:"img/michele.png",
                 avatar: '_1',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -30,6 +31,7 @@ const myApp = new Vue({
                 image: "img/fabio.png",
                 avatar: '_2',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -53,6 +55,7 @@ const myApp = new Vue({
                 image: "img/samuele.png",
                 avatar: '_3',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -76,6 +79,7 @@ const myApp = new Vue({
                 image: "img/alessandro.png",
                 avatar: '_4',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -94,6 +98,7 @@ const myApp = new Vue({
                 image: "img/alessandro-l.png",
                 avatar: '_5',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -112,6 +117,7 @@ const myApp = new Vue({
                 image: "img/claudia.png",
                 avatar: '_6',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -135,6 +141,7 @@ const myApp = new Vue({
                 image: "img/federico.png",
                 avatar: '_7',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -153,6 +160,7 @@ const myApp = new Vue({
                 image: "img/davide.png",
                 avatar: '_8',
                 visible: false,
+                search : true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -185,6 +193,8 @@ const myApp = new Vue({
             text: 'OK!!!',
             status: 'received',
         },
+        //  box ricerca vuoto
+        searchName : "",
         
         
     },
@@ -198,7 +208,7 @@ const myApp = new Vue({
                 this.contacts[index].visible = true;
             }
         },
-       //funzione che controlla l'invio del messaggio del utente e la aggiunge al oggetto con la classe visible:true
+       //funzione che controlla l'invio del messaggio del utente e pusha il messaggio nella chat con visible : true, con funzione che pusha il messaggio di risposta.
        sendMessagge(){
         if (this.newMessage.text[0] !== "" && this.newMessage.text.length > 0) {
             this.contacts.find((element) => {
@@ -206,12 +216,28 @@ const myApp = new Vue({
                     element.messages.push(this.newMessage);
                     this.newMessage = {date: new Date().toLocaleString(), text: '', status: 'sent'};
                     setTimeout(() => element.messages.push(this.respMessage), 1000);
-                    this.respMessage = {date: new Date().toLocaleString(), text: 'Ok!', status: 'received', msgDropdown: false};
+                    this.respMessage = {date: new Date().toLocaleString(), text: 'Ok!', status: 'received'};
                 }
             })
            
         }
         
        },
-    }
+
+       //funzione che cicla in contatti e con il valore presente nel v-model, ricerca l'elemento nel array e se lo trova gli assegna il valore true se non lo trova li assegna il valore false 
+       searchUser(){
+
+        for (let i = 0; i < this.contacts.length; i++){
+            //filtro che rende il testo delle stringhe maiuscolo
+            filterName = this.searchName.toUpperCase();
+
+            if (this.contacts[i].name.toUpperCase().indexOf(filterName) > -1) {
+                this.contacts[i].search = true;
+            } else {
+                this.contacts[i].search = false;
+            }
+       }
+    },
+
+   }
 }) 

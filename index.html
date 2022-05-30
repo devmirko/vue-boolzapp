@@ -56,12 +56,13 @@
                     <button>
                         <i class="fa-solid fa-magnifying-glass sub_title"></i>
                     </button>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchName" @keyup="searchUser">
                 </section>
                 <section id="contact">
                     <div class="item" v-for="(item, i) in contacts" :key="i"
                     @click ="userChat(i)"
                     :class="{'active': item.visible}"
+                    v-if="item.search === true"
                     >
                         <!-- contatti  -->
                         <div class="box_image">
@@ -112,9 +113,9 @@
             <div class="right_container">
                 <!-- colonna con contenuto messaggi dove a seconda della tipologia di messaggio
                 cambiano le classi justfy-content e background-color -->
-                <div class="row" v-for="contact, chatIndex in contacts" :key="chatIndex" v-if="contact.visible === true" >
+                <div class="row" v-for="(contact, chatIndex) in contacts" :key="chatIndex" v-if="contact.visible === true" >
                     <div class="item_messagge"
-                    v-for="message, messageIndex in contact.messages" :key="messageIndex"
+                    v-for="(message, messageIndex) in contact.messages" :key="messageIndex"
                     :class="message.status === 'sent' ? 'tosend' : 'received' ">
                         {{message.text}}
                         <!-- <span>contenuto orario</span> -->
