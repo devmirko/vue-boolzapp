@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body{
     background-color: #DBDBD3;
     position: relative;
     height: 100vh;
+    font-family: Lato, sans serif;
 }
 
 .color_head{
@@ -37,7 +39,7 @@ body{
 #right_app{
     width: 70%;
     height: 100%;
-    border-left: 1px solid black;
+    border-left: 1px solid #E9EBEB;
 
 }
 /* parte di sinistra nel user con immagine e nome */
@@ -47,6 +49,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #EAEAEA;
 }
 
  .box_image{
@@ -74,7 +77,8 @@ body{
 
 .right_user_profile ul li a{
     text-decoration: none;
-    color: #DBDBD3;
+    color: #B1B1B1;
+    font-size: 20px;
 }
 
 /*  sezione notifiche  */
@@ -113,14 +117,22 @@ body{
     height: 100%;
 }
 
+#contact .box_name{
+margin-left: 20px;
+margin-right: 140px;
+}
 /* contatti */
 .item{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     min-height: 80px;
-    /* debugger */
+    border-top: 1px solid #e9ebebe2;
     
+}
+
+.sub_title{
+    color :#6B7376;
 }
 
 
@@ -135,7 +147,7 @@ body{
 #right_header{
     width: 100%;
     height: 70px;
-
+    background-color: #EAEAEA;
     display: flex;
     align-items: center;
 }
@@ -160,7 +172,8 @@ body{
 
 .right_chat_profile ul li a{
     text-decoration: none;
-    color: #DBDBD3;
+    color: #B1B1B1;
+    font-size: 20px;
 }
  /* contenuto chat */
  .right_container{
@@ -185,10 +198,12 @@ body{
      padding: 10px 0;
      border-radius: 10px;
      background-color: white;
+     display: flex;
+     justify-content: space-around;
  }
 
  .tosend{
-     background-color: #009688;
+     background-color: #D5F9BA;
  }
 
  .right{
@@ -202,12 +217,13 @@ body{
      display: flex;
      justify-content: space-between;
      align-items: center;
+     background-color: #F3EEEA;
  }
 
  .smile, .vocal{
      width: 10%;
      text-align: center;
-     color: #DBDBD3;
+     color: #6B7376;
      font-size: 28px;
  }
 
