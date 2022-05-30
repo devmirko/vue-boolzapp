@@ -211,6 +211,7 @@ margin-right: 140px;
 
  .tosend{
      background-color: #D5F9BA;
+     align-self: flex-end;
  }
 
  .right{
