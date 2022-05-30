@@ -188,7 +188,10 @@ margin-right: 140px;
      width: 80%;
      margin: 0 auto;
      min-height: 70px;
+     margin-bottom: 20px;
      display: flex;
+     flex-direction: column;
+     
 
  }
 
@@ -200,6 +203,10 @@ margin-right: 140px;
      background-color: white;
      display: flex;
      justify-content: space-around;
+ }
+
+ .received{
+     background-color: #fff;
  }
 
  .tosend{

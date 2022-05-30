@@ -109,14 +109,15 @@
             <div class="right_container">
                 <!-- colonna con contenuto messaggi dove a seconda della tipologia di messaggio
                 cambiano le classi justfy-content e background-color -->
-                <div class="row">
-                    <div class="item_messagge">hai portato a spasso il cane<span>15.50</span></div>
-                    
+                <div class="row" v-for="contact, chatIndex in contacts" :key="chatIndex">
+                    <div class="item_messagge" 
+                    v-for="message, messageIndex in contact.messages" :key="messageIndex"
+                    :class="message.status === 'sent' ? 'tosend' : 'received' ">
+                        {{message.text}}
+                        <!-- <span>15.50</span> -->
+                    </div>
                 </div>
-                <div class="row right">
-                    <div class="item_messagge tosend">hai portato a spasso il cane<span>15.50</span></div>
-                </div>
-
+                
             </div>
             <div class="text_container">
                 <div class="smile">
