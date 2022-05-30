@@ -21,8 +21,7 @@ body{
     height: 1200px;
     margin: 0 auto;
     background-color: white;
-    position: absolute;
-    position:absolute; 
+    position: absolute; 
     top:50%; 
     left:50%; 
     transform:translate(-50%, -50%);
@@ -62,6 +61,17 @@ body{
     width: 100%;
     height: 100%;
 }
+
+/* stile utente */
+.left_user_profile{
+ display: flex;
+ align-items: center;
+}
+
+.left_user_profile .box_name{
+    margin-left: 20px;
+}
+
 /* parte di destra del user con impostazioni */
 
 .right_user_profile ul {
@@ -97,24 +107,48 @@ body{
     margin-left: 20px;
 }
 
-/* ricerca chat */
-#research_chat{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    padding: 5px;
+#new_messagge .box_image {
+   position: relative;
+   background-color: white;
+   border-radius: 50px;
 }
 
-#research_chat button{
-    width: 15%;
-    height: 100%;
-    background-color: white;
+#new_messagge .box_image i{
+    font-size: 18px;
+    color: #8EDAFC;
+    position: absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+    
+}
+
+#new_messagge .box_not a{
+    color: #6B7376;
+    
+}
+
+/* ricerca chat */
+#research_chat{
+    width: 95%;
+    height: 50px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #E9EBEB;
+}
+
+#research_chat i{
+   margin: 0 auto;
+   color: #6B7376;
     
 }
 
 #research_chat input{
-    width: 85%;
+    width: 90%;
     height: 100%;
+
 }
 
 #contact .box_name{

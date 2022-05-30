@@ -1,6 +1,10 @@
 const myApp = new Vue({
     el : "#container",
     data : {
+        user:{
+            name: 'Mirko',
+            image:"img/user.png",
+            },
         contacts: [
             {
                 name: 'Michele',

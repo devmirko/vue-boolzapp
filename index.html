@@ -19,7 +19,10 @@
             <div id="left_header">
                 <div class="left_user_profile">
                     <div class="box_image">
-                        <img src="img/michele.png" alt="questa è una immagine">
+                        <img src="img/michele.png"  :src="user.image" alt="questa è una immagine">
+                    </div>
+                    <div class="box_name">
+                        <h3>{{user.name}}</h3>
                     </div>
                    
                     
@@ -44,19 +47,19 @@
             <div class="left_container">
                 <section id="new_messagge">
                     <div class="box_image">
-                        <img src="img/michele.png" alt="questa è una immagine">
+                        <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="box_not">
-                        <span>ricevi notifiche di nuovi messaggi</span>
+                        <span>Ricevi notifiche di nuovi messaggi</span>
                         <a href="">attiva notifiche destkop</a>
                     </div>
 
                 </section>
                 <section id="research_chat">
-                    <button>
+                    
                         <i class="fa-solid fa-magnifying-glass sub_title"></i>
-                    </button>
-                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchName" @keyup="searchUser">
+                        <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchName" @keyup="searchUser">
+                    
                 </section>
                 <section id="contact">
                     <div class="item" v-for="(item, i) in contacts" :key="i"
@@ -73,7 +76,7 @@
                             <p class="sub_title">ultimo messaggio inviato</p>
                         </div>
                         <div class="clock">
-                            <span>12.00</span>
+                            <span></span>
                         </div>
                         
                     </div>
@@ -82,16 +85,16 @@
 
         </div>
         <div id="right_app">
-            <div id="right_header">
+            <div id="right_header" v-for="profile, profileIndex in contacts" :key="profileIndex" v-if="profile.visible === true">
                 <!-- immagine del profilo del utente -->
                 <div class="left_chat_profile">
                     <div class="box_image">
-                        <img src="img/michele.png" alt="questa è una immagine">
+                        <img  :src="profile.image" alt="questa è una immagine">
                     </div>
                 </div>
                 <div class="right_chat_profile">
                     <div class="box_name">
-                        <h3>nome</h3>
+                        <h3>{{profile.name}}</h3>
                         <p class="sub_title">ultimo messaggio inviato</p>
                     </div>
                     <ul>
