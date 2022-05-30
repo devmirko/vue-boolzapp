@@ -206,7 +206,7 @@ const myApp = new Vue({
                     element.messages.push(this.newMessage);
                     this.newMessage = {date: new Date().toLocaleString(), text: '', status: 'sent'};
                     setTimeout(() => element.messages.push(this.respMessage), 1000);
-                    this.responseMessage = {date: new Date().toLocaleString(), text: 'OK!!!', status: 'received'};
+                    this.respMessage = {date: new Date().toLocaleString(), text: 'Ok!', status: 'received', msgDropdown: false};
                 }
             })
            
