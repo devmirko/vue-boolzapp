@@ -73,7 +73,7 @@
                         </div>
                         <div class="box_name">
                             <h3>{{item.name}}</h3>
-                            <p class="sub_title">ultimo messaggio inviato</p>
+                            <p class="sub_title" v-for="(lastmessage, lastmessageIndex) in item.messages" :key="lastmessageIndex" >ultimo messaggio inviato <span>{{lastmessage.date}}</span> </p>
                         </div>
                         <div class="clock">
                             <span></span>
@@ -95,7 +95,7 @@
                 <div class="right_chat_profile">
                     <div class="box_name">
                         <h3>{{profile.name}}</h3>
-                        <p class="sub_title">ultimo messaggio inviato</p>
+                        <p class="sub_title" v-for="(lastmessageChat, lastmessageChatIndex) in profile.messages" :key="lastmessageChatIndex" >ultimo messaggio inviato <span>{{lastmessageChat.date}}</span></p>
                     </div>
                     <ul>
                         <li>
@@ -121,7 +121,7 @@
                     v-for="(message, messageIndex) in contact.messages" :key="messageIndex"
                     :class="message.status === 'sent' ? 'tosend' : 'received' ">
                         {{message.text}}
-                        <!-- <span>contenuto orario</span> -->
+                        <span>{{message.date}}</span>
                     </div>
                 </div>
                 
@@ -140,6 +140,7 @@
 
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>

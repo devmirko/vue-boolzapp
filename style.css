@@ -283,3 +283,11 @@ margin-right: 140px;
      width: 100%;
  }
 
+ .box_name p {
+     display: none;
+ }
+
+ .box_name p:last-child{
+     display: block;
+ }
+
