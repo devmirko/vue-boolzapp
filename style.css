@@ -236,13 +236,15 @@ margin-right: 140px;
  }
 
  .item_messagge{
-     width: 300px;
+     width: 400px;
      height: 100%;
      padding: 10px 0;
+     margin-bottom: 10px;
      border-radius: 10px;
      background-color: white;
      display: flex;
      justify-content: space-around;
+     position: relative;
  }
 
  .received{
@@ -290,4 +292,27 @@ margin-right: 140px;
  .box_name p:last-child{
      display: block;
  }
+
+
+ .option_message{
+    list-style: none;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 30px;
+    right: 0px;
+ }
+
+ .option_visible{
+     display: block;
+ }
+
+ .option_visible li{
+     padding: 10px;
+     margin: 5px 0;
+     cursor: pointer;
+ }
+
+
 

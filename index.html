@@ -73,10 +73,7 @@
                         </div>
                         <div class="box_name">
                             <h3>{{item.name}}</h3>
-                            <p class="sub_title" v-for="(lastmessage, lastmessageIndex) in item.messages" :key="lastmessageIndex" >ultimo messaggio inviato <span>{{lastmessage.date}}</span> </p>
-                        </div>
-                        <div class="clock">
-                            <span></span>
+                            <p class="sub_title" v-for="(lastmessage, lastmessageIndex) in item.messages" :key="lastmessageIndex" >ultimo messaggio inviato <span>{{time(lastmessage)}}</span> </p>
                         </div>
                         
                     </div>
@@ -121,7 +118,12 @@
                     v-for="(message, messageIndex) in contact.messages" :key="messageIndex"
                     :class="message.status === 'sent' ? 'tosend' : 'received' ">
                         {{message.text}}
-                        <span>{{message.date}}</span>
+                        <span>{{time(message)}}</span>
+                        <i class="fa-solid fa-chevron-down" @click = "optionMess(chatIndex, messageIndex)" ></i>
+                        <ul class="option_message" :class="{'option_visible': contact.messages[messageIndex].dropdown}">
+                            <li>info messaggio</li>
+                            <li  @click ="deleteMessage(chatIndex, messageIndex)">elimina messaggio</li>
+                        </ul>
                     </div>
                 </div>
                 

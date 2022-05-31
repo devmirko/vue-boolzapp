@@ -16,17 +16,20 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di stendere i panni',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
             },
@@ -40,17 +43,20 @@ const myApp = new Vue({
                     {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '20/03/2020 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     },
                     {
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     }
                 ],
             },
@@ -64,17 +70,20 @@ const myApp = new Vue({
                     {
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     },
                     {
                         date: '28/03/2020 10:20:10',
                         text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '28/03/2020 16:15:22',
                         text: 'Ah scusa!',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
             },
@@ -88,12 +97,14 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
             },
@@ -107,12 +118,14 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Ricordati di chiamare la nonna',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Va bene, stasera la sento',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
             },
@@ -126,17 +139,20 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Ciao Claudia, hai novità?',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Non ancora',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:51:00',
                         text: 'Nessuna nuova, buona nuova',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     }
                 ],
             },
@@ -150,12 +166,14 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Fai gli auguri a Martina che è il suo compleanno!',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Grazie per avermelo ricordato, le scrivo subito!',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
             },
@@ -169,17 +187,20 @@ const myApp = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Ciao, andiamo a mangiare la pizza stasera?',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                        status: 'sent'
+                        status: 'sent',
+                        dropdown: false
                     },
                     {
                         date: '10/01/2020 15:51:00',
                         text: 'OK!!',
-                        status: 'received'
+                        status: 'received',
+                        dropdown: false
                     }
                 ],
                
@@ -243,10 +264,30 @@ const myApp = new Vue({
        }
     },
 
+    //funzione che cambia il valore di (dropdown in true) se il valore di visible e true.
+    optionMess(index, message){
+        if (this.contacts[index].visible === true) {
+            if (!this.contacts[index].messages[message].dropdown) {
+                this.contacts[index].messages[message].dropdown = true;
+            } else {
+            this.contacts[index].messages[message].dropdown = false;
+            }
 
-        
+    }
+    },
+    
+    //elimina messaggio
+    deleteMessage(index,message){
+      this.contacts[index].messages.splice(message,1)
+    },
 
-   }
+    //elimina la data di invio e rimane l'orario di invio
+    time(message){
+        const timeArray = message.date.split(" ")[1].split(":");
+        return timeArray[0] + ":" + timeArray[1];
+    }
+ 
+}
 }) 
 
 
