@@ -118,12 +118,16 @@
                     v-for="(message, messageIndex) in contact.messages" :key="messageIndex"
                     :class="message.status === 'sent' ? 'tosend' : 'received' ">
                         {{message.text}}
-                        <span>{{time(message)}}</span>
-                        <i class="fa-solid fa-chevron-down" @click = "optionMess(chatIndex, messageIndex)" ></i>
-                        <ul class="option_message" :class="{'option_visible': contact.messages[messageIndex].dropdown}">
-                            <li>info messaggio</li>
-                            <li  @click ="deleteMessage(chatIndex, messageIndex)">elimina messaggio</li>
-                        </ul>
+                        <!-- orario e dropdown -->
+                        <div class="info sub_title">
+                            <span>{{time(message)}}</span>
+                            <i class="fa-solid fa-chevron-down" @click = "optionMess(chatIndex, messageIndex)" ></i>
+                            <ul class="option_message" :class="{'option_visible': contact.messages[messageIndex].dropdown}">
+                                <li>info messaggio</li>
+                                <li  @click ="deleteMessage(chatIndex, messageIndex)">elimina messaggio</li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
                 
