@@ -183,7 +183,7 @@ margin-right: 140px;
 /* parte di destra */
 /* testata parte destra */
 .left_chat_profile{
- width: 10%;
+ margin-right: 20px;
 }
 
 #right_header{
@@ -221,7 +221,7 @@ margin-right: 140px;
  /* contenuto chat */
  .right_container{
      width: 100%;
-     height: calc(100vh - 150px);
+     height: calc(100% - 70px);
      background-image: url("img/sfondo-chat.webp");
      padding-top: 100px;
  }
